@@ -5,7 +5,7 @@ default: dev
 dev: down dirs
 	docker run \
 		-v $(shell pwd)/src:/opt/harperdb/hdb \
-		-v $(shell pwd)/cf:/opt/harperdb/hdb/custom_functions/$(cf) \
+		-v $(shell pwd)/$(cf):/opt/harperdb/hdb/custom_functions/$(cf) \
 		-e LOG_LEVEL=error \
 		-e HDB_ADMIN_USERNAME=hdbcf \
 		-e HDB_ADMIN_PASSWORD=hdbcf \
@@ -26,7 +26,7 @@ bash:
 	docker run \
 		-it \
 		-v $(shell pwd)/src:/opt/harperdb/hdb \
-		-v $(shell pwd)/cf:/opt/harperdb/hdb/custom_functions/$(cf) \
+		-v $(shell pwd)/$(cf):/opt/harperdb/hdb/custom_functions/$(cf) \
 		harperdb/harperdb:latest \
 		bash
 
