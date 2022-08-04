@@ -25,6 +25,10 @@ curl -X POST http://localhost:9926/ingest/upsert/example/curls \
     -d '{"dog":"harper", "breed": "yellow-lab"}'
 ```
 
+### Expected Response
+
+A successful request will receive a response status code of 200. More info is availabe in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#successful_responses).
+
 ## Development
 
 To launch a development instance run `make dev`.
